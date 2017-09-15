@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Backgammon Web</title>
+        <script src="bundle.js"></script>
+    </head>
+    <body>
+        <div id="container">
+            <div id="board">
+                <img src="img/board.png">
+                <div id="dice">
+                    <div id="die3" class="die"></div>
+                    <div id="die1" class="die"></div>
+                    <div id="die2" class="die"></div>
+                    <div id="die4" class="die"></div>
+                </div>
+                <div id="middle-left-board">
+                    <button id="roll-button" class="board-button">Roll dice</button>
+                    <button id="end-turn-button" class="board-button">End turn</button>
+                    <button id="accept-button" class="board-button">Accept</button>
+                </div>
+                <div id="middle-right-board">
+                    <button id="double-button" class="board-button">Double stake</button>
+                    <button id="reject-button" class="board-button">Reject</button>
+                </div>
+                <div id="pointWB">
+                    <div class="socket socket-pos-5 socket-count-1"><div class="checker"></div></div>
+                    <div class="socket socket-pos-4 socket-count-2"><div class="checker"></div></div>
+                    <div class="socket socket-pos-3 socket-count-3"><div class="checker"></div></div>
+                    <div class="socket socket-pos-2 socket-count-4"><div class="checker"></div></div>
+                    <div class="socket socket-pos-1 socket-count-5"><div class="checkerBg"><div class="number"></div></div><div class="checker"><div class="number"></div></div></div>
+                </div>
+                <div id="pointWH">
+                    <div class="socket socket-pos-1 socket-count-1"><div class="checker"></div></div>
+                    <div class="socket socket-pos-2 socket-count-2"><div class="checker"></div></div>
+                    <div class="socket socket-pos-3 socket-count-3"><div class="checker"></div></div>
+                    <div class="socket socket-pos-4 socket-count-4"><div class="checker"></div></div>
+                    <div class="socket socket-pos-5 socket-count-5"><div class="checkerBg"><div class="number"></div></div><div class="checker"><div class="number"></div></div></div>
+                </div>
+                <div id="pointBB">
+                    <div class="socket socket-pos-1 socket-count-1"><div class="checker"></div></div>
+                    <div class="socket socket-pos-2 socket-count-2"><div class="checker"></div></div>
+                    <div class="socket socket-pos-3 socket-count-3"><div class="checker"></div></div>
+                    <div class="socket socket-pos-4 socket-count-4"><div class="checker"></div></div>
+                    <div class="socket socket-pos-5 socket-count-5"><div class="checkerBg"><div class="number"></div></div><div class="checker"><div class="number"></div></div></div>
+                </div>
+                <div id="pointBH">
+                    <div class="socket socket-pos-5 socket-count-1"><div class="checker"></div></div>
+                    <div class="socket socket-pos-4 socket-count-2"><div class="checker"></div></div>
+                    <div class="socket socket-pos-3 socket-count-3"><div class="checker"></div></div>
+                    <div class="socket socket-pos-2 socket-count-4"><div class="checker"></div></div>
+                    <div class="socket socket-pos-1 socket-count-5"><div class="checkerBg"><div class="number"></div></div><div class="checker"><div class="number"></div></div></div>
+                </div>
+                <div id="lower-right-board" class="sub-board">
+                    <div id="point01" class="point point-pos-6">
+                        <div class="socket socket-pos-5 socket-count-1"><div class="checker"></div></div>
+                        <div class="socket socket-pos-4 socket-count-2"><div class="checker"></div></div>
+                        <div class="socket socket-pos-3 socket-count-3"><div class="checker"></div></div>
+                        <div class="socket socket-pos-2 socket-count-4"><div class="checker"></div></div>
+                        <div class="socket socket-pos-1 socket-count-5"><div class="checkerBg"><div class="number"></div></div><div class="checker"><div class="number"></div></div></div>
+                    </div>
+                    <div id="point02" class="point point-pos-5">
+                        <div class="socket socket-pos-5 socket-count-1"><div class="checker"></div></div>
+                        <div class="socket socket-pos-4 socket-count-2"><div class="checker"></div></div>
+                        <div class="socket socket-pos-3 socket-count-3"><div class="checker"></div></div>
+                        <div class="socket socket-pos-2 socket-count-4"><div class="checker"></div></div>
+                        <div class="socket socket-pos-1 socket-count-5"><div class="checkerBg"><div class="number"></div></div><div class="checker"><div class="number"></div></div></div>
+                    </div>
+                    <div id="point03" class="point point-pos-4">
+                        <div class="socket socket-pos-5 socket-count-1"><div class="checker"></div></div>
+                        <div class="socket socket-pos-4 socket-count-2"><div class="checker"></div></div>
+                        <div class="socket socket-pos-3 socket-count-3"><div class="checker"></div></div>
+                        <div class="socket socket-pos-2 socket-count-4"><div class="checker"></div></div>
+                        <div class="socket socket-pos-1 socket-count-5"><div class="checkerBg"><div class="number"></div></div><div class="checker"><div class="number"></div></div></div>
+                    </div>
+                    <div id="point04" class="point point-pos-3">
+                        <div class="socket socket-pos-5 socket-count-1"><div class="checker"></div></div>
+                        <div class="socket socket-pos-4 socket-count-2"><div class="checker"></div></div>
+                        <div class="socket socket-pos-3 socket-count-3"><div class="checker"></div></div>
+                        <div class="socket socket-pos-2 socket-count-4"><div class="checker"></div></div>
+                        <div class="socket socket-pos-1 socket-count-5"><div class="checkerBg"><div class="number"></div></div><div class="checker"><div class="number"></div></div></div>
+                    </div>
+                    <div id="point05" class="point point-pos-2">
+                        <div class="socket socket-pos-5 socket-count-1"><div class="checker"></div></div>
+                        <div class="socket socket-pos-4 socket-count-2"><div class="checker"></div></div>
+                        <div class="socket socket-pos-3 socket-count-3"><div class="checker"></div></div>
+                        <div class="socket socket-pos-2 socket-count-4"><div class="checker"></div></div>
+                        <div class="socket socket-pos-1 socket-count-5"><div class="checkerBg"><div class="number"></div></div><div class="checker"><div class="number"></div></div></div>
+                    </div>
+                    <div id="point06" class="point point-pos-1">
+                        <div class="socket socket-pos-5 socket-count-1"><div class="checker"></div></div>
+                        <div class="socket socket-pos-4 socket-count-2"><div class="checker"></div></div>
+                        <div class="socket socket-pos-3 socket-count-3"><div class="checker"></div></div>
+                        <div class="socket socket-pos-2 socket-count-4"><div class="checker"></div></div>
+                        <div class="socket socket-pos-1 socket-count-5"><div class="checkerBg"><div class="number"></div></div><div class="checker"><div class="number"></div></div></div>
+                    </div>
+                </div>
+                <div id="lower-left-board" class="sub-board">
+                    <div id="point07" class="point point-pos-6">
+                        <div class="socket socket-pos-5 socket-count-1"><div class="checker"></div></div>
+                        <div class="socket socket-pos-4 socket-count-2"><div class="checker"></div></div>
+                        <div class="socket socket-pos-3 socket-count-3"><div class="checker"></div></div>
+                        <div class="socket socket-pos-2 socket-count-4"><div class="checker"></div></div>
+                        <div class="socket socket-pos-1 socket-count-5"><div class="checkerBg"><div class="number"></div></div><div class="checker"><div class="number"></div></div></div>
+                    </div>
+                    <div id="point08" class="point point-pos-5">
+                        <div class="socket socket-pos-5 socket-count-1"><div class="checker"></div></div>
+                        <div class="socket socket-pos-4 socket-count-2"><div class="checker"></div></div>
+                        <div class="socket socket-pos-3 socket-count-3"><div class="checker"></div></div>
+                        <div class="socket socket-pos-2 socket-count-4"><div class="checker"></div></div>
+                        <div class="socket socket-pos-1 socket-count-5"><div class="checkerBg"><div class="number"></div></div><div class="checker"><div class="number"></div></div></div>
+                    </div>
+                    <div id="point09" class="point point-pos-4">
+                        <div class="socket socket-pos-5 socket-count-1"><div class="checker"></div></div>
+                        <div class="socket socket-pos-4 socket-count-2"><div class="checker"></div></div>
+                        <div class="socket socket-pos-3 socket-count-3"><div class="checker"></div></div>
+                        <div class="socket socket-pos-2 socket-count-4"><div class="checker"></div></div>
+                        <div class="socket socket-pos-1 socket-count-5"><div class="checkerBg"><div class="number"></div></div><div class="checker"><div class="number"></div></div></div>
+                    </div>
+                    <div id="point10" class="point point-pos-3">
+                        <div class="socket socket-pos-5 socket-count-1"><div class="checker"></div></div>
+                        <div class="socket socket-pos-4 socket-count-2"><div class="checker"></div></div>
+                        <div class="socket socket-pos-3 socket-count-3"><div class="checker"></div></div>
+                        <div class="socket socket-pos-2 socket-count-4"><div class="checker"></div></div>
+                        <div class="socket socket-pos-1 socket-count-5"><div class="checkerBg"><div class="number"></div></div><div class="checker"><div class="number"></div></div></div>
+                    </div>
+                    <div id="point11" class="point point-pos-2">
+                        <div class="socket socket-pos-5 socket-count-1"><div class="checker"></div></div>
+                        <div class="socket socket-pos-4 socket-count-2"><div class="checker"></div></div>
+                        <div class="socket socket-pos-3 socket-count-3"><div class="checker"></div></div>
+                        <div class="socket socket-pos-2 socket-count-4"><div class="checker"></div></div>
+                        <div class="socket socket-pos-1 socket-count-5"><div class="checkerBg"><div class="number"></div></div><div class="checker"><div class="number"></div></div></div>
+                    </div>
+                    <div id="point12" class="point point-pos-1">
+                        <div class="socket socket-pos-5 socket-count-1"><div class="checker"></div></div>
+                        <div class="socket socket-pos-4 socket-count-2"><div class="checker"></div></div>
+                        <div class="socket socket-pos-3 socket-count-3"><div class="checker"></div></div>
+                        <div class="socket socket-pos-2 socket-count-4"><div class="checker"></div></div>
+                        <div class="socket socket-pos-1 socket-count-5"><div class="checkerBg"><div class="number"></div></div><div class="checker"><div class="number"></div></div></div>
+                    </div>
+                </div>
+                <div id="upper-left-board" class="sub-board">
+                    <div id="point13" class="point point-pos-1">
+                        <div class="socket socket-pos-1 socket-count-1"><div class="checker"></div></div>
+                        <div class="socket socket-pos-2 socket-count-2"><div class="checker"></div></div>
+                        <div class="socket socket-pos-3 socket-count-3"><div class="checker"></div></div>
+                        <div class="socket socket-pos-4 socket-count-4"><div class="checker"></div></div>
+                        <div class="socket socket-pos-5 socket-count-5"><div class="checkerBg"><div class="number"></div></div><div class="checker"><div class="number"></div></div></div>
+                    </div>
+                    <div id="point14" class="point point-pos-2">
+                        <div class="socket socket-pos-1 socket-count-1"><div class="checker"></div></div>
+                        <div class="socket socket-pos-2 socket-count-2"><div class="checker"></div></div>
+                        <div class="socket socket-pos-3 socket-count-3"><div class="checker"></div></div>
+                        <div class="socket socket-pos-4 socket-count-4"><div class="checker"></div></div>
+                        <div class="socket socket-pos-5 socket-count-5"><div class="checkerBg"><div class="number"></div></div><div class="checker"><div class="number"></div></div></div>
+                    </div>
+                    <div id="point15" class="point point-pos-3">
+                        <div class="socket socket-pos-1 socket-count-1"><div class="checker"></div></div>
+                        <div class="socket socket-pos-2 socket-count-2"><div class="checker"></div></div>
+                        <div class="socket socket-pos-3 socket-count-3"><div class="checker"></div></div>
+                        <div class="socket socket-pos-4 socket-count-4"><div class="checker"></div></div>
+                        <div class="socket socket-pos-5 socket-count-5"><div class="checkerBg"><div class="number"></div></div><div class="checker"><div class="number"></div></div></div>
+                    </div>
+                    <div id="point16" class="point point-pos-4">
+                        <div class="socket socket-pos-1 socket-count-1"><div class="checker"></div></div>
+                        <div class="socket socket-pos-2 socket-count-2"><div class="checker"></div></div>
+                        <div class="socket socket-pos-3 socket-count-3"><div class="checker"></div></div>
+                        <div class="socket socket-pos-4 socket-count-4"><div class="checker"></div></div>
+                        <div class="socket socket-pos-5 socket-count-5"><div class="checkerBg"><div class="number"></div></div><div class="checker"><div class="number"></div></div></div>
+                    </div>
+                    <div id="point17" class="point point-pos-5">
+                        <div class="socket socket-pos-1 socket-count-1"><div class="checker"></div></div>
+                        <div class="socket socket-pos-2 socket-count-2"><div class="checker"></div></div>
+                        <div class="socket socket-pos-3 socket-count-3"><div class="checker"></div></div>
+                        <div class="socket socket-pos-4 socket-count-4"><div class="checker"></div></div>
+                        <div class="socket socket-pos-5 socket-count-5"><div class="checkerBg"><div class="number"></div></div><div class="checker"><div class="number"></div></div></div>
+                    </div>
+                    <div id="point18" class="point point-pos-6">
+                        <div class="socket socket-pos-1 socket-count-1"><div class="checker"></div></div>
+                        <div class="socket socket-pos-2 socket-count-2"><div class="checker"></div></div>
+                        <div class="socket socket-pos-3 socket-count-3"><div class="checker"></div></div>
+                        <div class="socket socket-pos-4 socket-count-4"><div class="checker"></div></div>
+                        <div class="socket socket-pos-5 socket-count-5"><div class="checkerBg"><div class="number"></div></div><div class="checker"><div class="number"></div></div></div>
+                    </div>
+                </div>
+                <div id="upper-right-board" class="sub-board">
+                    <div id="point19" class="point point-pos-1">
+                        <div class="socket socket-pos-1 socket-count-1"><div class="checker"></div></div>
+                        <div class="socket socket-pos-2 socket-count-2"><div class="checker"></div></div>
+                        <div class="socket socket-pos-3 socket-count-3"><div class="checker"></div></div>
+                        <div class="socket socket-pos-4 socket-count-4"><div class="checker"></div></div>
+                        <div class="socket socket-pos-5 socket-count-5"><div class="checkerBg"><div class="number"></div></div><div class="checker"><div class="number"></div></div>
+                        </div>
+                    </div>
+                    <div id="point20" class="point point-pos-2">
+                        <div class="socket socket-pos-1 socket-count-1"><div class="checker"></div></div>
+                        <div class="socket socket-pos-2 socket-count-2"><div class="checker"></div></div>
+                        <div class="socket socket-pos-3 socket-count-3"><div class="checker"></div></div>
+                        <div class="socket socket-pos-4 socket-count-4"><div class="checker"></div></div>
+                        <div class="socket socket-pos-5 socket-count-5"><div class="checkerBg"><div class="number"></div></div><div class="checker"><div class="number"></div></div></div>
+                    </div>
+                    <div id="point21" class="point point-pos-3">
+                        <div class="socket socket-pos-1 socket-count-1"><div class="checker"></div></div>
+                        <div class="socket socket-pos-2 socket-count-2"><div class="checker"></div></div>
+                        <div class="socket socket-pos-3 socket-count-3"><div class="checker"></div></div>
+                        <div class="socket socket-pos-4 socket-count-4"><div class="checker"></div></div>
+                        <div class="socket socket-pos-5 socket-count-5"><div class="checkerBg"><div class="number"></div></div><div class="checker"><div class="number"></div></div></div>
+                    </div>
+                    <div id="point22" class="point point-pos-4">
+                        <div class="socket socket-pos-1 socket-count-1"><div class="checker"></div></div>
+                        <div class="socket socket-pos-2 socket-count-2"><div class="checker"></div></div>
+                        <div class="socket socket-pos-3 socket-count-3"><div class="checker"></div></div>
+                        <div class="socket socket-pos-4 socket-count-4"><div class="checker"></div></div>
+                        <div class="socket socket-pos-5 socket-count-5"><div class="checkerBg"><div class="number"></div></div><div class="checker"><div class="number"></div></div></div>
+                    </div>
+                    <div id="point23" class="point point-pos-5">
+                        <div class="socket socket-pos-1 socket-count-1"><div class="checker"></div></div>
+                        <div class="socket socket-pos-2 socket-count-2"><div class="checker"></div></div>
+                        <div class="socket socket-pos-3 socket-count-3"><div class="checker"></div></div>
+                        <div class="socket socket-pos-4 socket-count-4"><div class="checker"></div></div>
+                        <div class="socket socket-pos-5 socket-count-5"><div class="checkerBg"><div class="number"></div></div><div class="checker"><div class="number"></div></div></div>
+                    </div>
+                    <div id="point24" class="point point-pos-6">
+                        <div class="socket socket-pos-1 socket-count-1"><div class="checker"></div></div>
+                        <div class="socket socket-pos-2 socket-count-2"><div class="checker"></div></div>
+                        <div class="socket socket-pos-3 socket-count-3"><div class="checker"></div></div>
+                        <div class="socket socket-pos-4 socket-count-4"><div class="checker"></div></div>
+                        <div class="socket socket-pos-5 socket-count-5"><div class="checkerBg"><div class="number"></div></div><div class="checker"><div class="number"></div></div></div>
+                    </div>
+                </div>
+                <div id="free-checker">
+                </div>
+                <div id="game-over-message">
+                    GAME OVER
+                </div>
+            </div>
+        </div>
+        <div id="controls">
+            <button id="new-game">New Game</button>
+        </div>
+    </body>
+</html>

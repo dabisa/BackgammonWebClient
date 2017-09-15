@@ -1,0 +1,213 @@
+#container {
+    display: inline-block;
+    position: relative;
+}
+#board {
+    display: inline-block;
+    position: absolute;
+}
+#controls {
+    display: inline-block;
+    position: relative;
+}
+
+#free-checker {
+    display: none;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+#dice {
+    display: inline-block;
+    position: absolute;
+    left: 60.9%;
+    top: 46%;
+    right: 18%;
+    bottom: 46%;
+}
+.die {
+    display: inline-block;
+    position: absolute;
+    background-image: "none";
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center; 
+    height: 100%;
+    width: 25%;
+}
+#die3 {
+    left: 0%;
+}
+#die1 {
+    left: 25%;
+}
+#die2 {
+    left: 50%;
+}
+#die4 {
+    left: 75%;
+}
+.board-button {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+}
+.sub-board {
+    display: inline-block;
+    position: absolute;
+}
+#lower-right-board {
+    left: 53.9%;
+    top: 55.2%;
+    right: 11%;
+    bottom: 7.8%;
+}
+#lower-left-board {
+    left: 11.5%;
+    top: 55.2%;
+    right: 53.4%;
+    bottom: 7.8%;
+}
+#upper-left-board {
+    left: 11.5%;
+    top: 7.4%;
+    right: 53.4%;
+    bottom: 55.6%;
+}
+#upper-right-board {
+    left: 53.9%;
+    top: 7.4%;
+    right: 11%;
+    bottom: 55.6%;
+}
+#middle-left-board {
+    display: inline-block;
+    position: absolute;
+    left: 11.5%;
+    top: 44.4%;
+    right: 53.4%;
+    bottom: 44.8%;
+    text-align: center;
+    vertical-align: middle;
+}
+#middle-right-board {
+    display: inline-block;
+    position: absolute;
+    left: 53.9%;
+    top: 44.4%;
+    right: 11%;
+    bottom: 44.8%;
+    text-align: center;
+}
+#pointWB {
+    display: inline-block;
+    position: absolute;
+    left: 3.075%;
+    top: 55.2%;
+    right: 91.075%;
+    bottom: 7.8%;
+}
+#pointBB {
+    display: inline-block;
+    position: absolute;
+    left: 3.075%;
+    top: 7.4%;
+    right: 91.075%;
+    bottom: 55.6%;
+}
+#pointWH {
+    display: inline-block;
+    position: absolute;
+    left: 91.25%;
+    top: 7.4%;
+    right: 2.9%;
+    bottom: 55.6%;
+}
+#pointBH {
+    display: inline-block;
+    position: absolute;
+    left: 91.25%;
+    top: 55.2%;
+    right: 2.9%;
+    bottom: 7.8%;
+}
+.point {
+    display: inline-block;
+    position: absolute;
+    height: 100%;
+    width: 16.67%;
+}
+.point-pos-1 { left: 0%; }
+.point-pos-2 { left: 16.67%; }
+.point-pos-3 { left: 33.33%; }
+.point-pos-4 { left: 50%; }
+.point-pos-5 { left: 66.67%; }
+.point-pos-6 { left: 83.33%; }
+.socket {
+    position: absolute;
+    height: 20%;
+    width: 100%;
+}
+.checker {
+    height: 100%;
+    width: 75%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    border-radius: 50%;
+    animation-duration: 0.15s;
+    animation-iteration-count: infinite;
+    margin: 0 auto;
+}
+.checkerBg {
+    position: absolute;
+    height: 100%;
+    width: 75%;
+    left: 12.5%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    border-radius: 50%;
+    margin: 0 auto;
+    user-select: none;
+}
+.number {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translateX(-50%) translateY(-50%);
+    user-select: none;
+}
+.socket-pos-1 { top: 0%; }
+.socket-pos-2 { top: 20%; }
+.socket-pos-3 { top: 40%; }
+.socket-pos-4 { top: 60%; }
+.socket-pos-5 { top: 80%; }
+
+#game-over-message {
+    display: none;
+    position: absolute;
+    color: red;
+    text-align: center;
+    font-size: 500%;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%); 
+}
+
+@keyframes blink {
+    from {
+        background-color: rgba(0, 255, 0, 0);
+        box-shadow: 0px 0px 10px 3px rgba(0, 255, 0, 0);
+    }
+    to {
+        background-color: rgba(0, 255, 0, 255);
+        box-shadow: 0px 0px 10px 3px rgba(0, 255, 0, 255);
+    }
+}
+
