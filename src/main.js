@@ -49,9 +49,9 @@ function getDieImage(die, used) {
 
 function getCheckerImage(color) {
 	switch (color) {
-	case 'W': return 'url(' + imageWhiteChecker + ')';
-	case 'B': return 'url(' + imageBlackChecker + ')';
-	default: return 'none';
+		case 'W': return 'url(' + imageWhiteChecker + ')';
+		case 'B': return 'url(' + imageBlackChecker + ')';
+		default: return 'none';
 	}
 }
 
@@ -62,24 +62,24 @@ function showDice(dice) {
 	}
 	var n = dice ? dice.length : 0;
 	switch (n) {
-	case 2:
-		showDie(3, 0, 0);
-		showDie(1, dice[0].die, dice[0].moves);
-		showDie(2, dice[1].die, dice[1].moves);
-		showDie(4, 0, 0);
-		break;
-	case 1:
-		showDie(3, dice[0].die, dice[0].moves - 3);
-		showDie(1, dice[0].die, dice[0].moves - 2);
-		showDie(2, dice[0].die, dice[0].moves - 1);
-		showDie(4, dice[0].die, dice[0].moves);
-		break;
-	default:
-		showDie(3, 0, 0);
-		showDie(1, 0, 0);
-		showDie(2, 0, 0);
-		showDie(4, 0, 0);
-		break;
+		case 2:
+			showDie(3, 0, 0);
+			showDie(1, dice[0].die, dice[0].moves);
+			showDie(2, dice[1].die, dice[1].moves);
+			showDie(4, 0, 0);
+			break;
+		case 1:
+			showDie(3, dice[0].die, dice[0].moves - 3);
+			showDie(1, dice[0].die, dice[0].moves - 2);
+			showDie(2, dice[0].die, dice[0].moves - 1);
+			showDie(4, dice[0].die, dice[0].moves);
+			break;
+		default:
+			showDie(3, 0, 0);
+			showDie(1, 0, 0);
+			showDie(2, 0, 0);
+			showDie(4, 0, 0);
+			break;
 	}
 }
 
@@ -127,20 +127,20 @@ function drawBoard(json) {
 				checkerBg = $('#point' + pointName + ' > .socket-count-5 > .checkerBg'),
 				checkerBgText = $('#point' + pointName + ' > .socket-count-5 > .checkerBg > .number'),
 				socket;
-				
+
 			checkerText.text((count > 5) ? count.toString() : '');
 			checkerBg.css({ 'background-image': (count > 5) ? checker_img : 'none' });
 			checkerBgText.text((count > 6) ? (count - 1).toString() : '');
-			
+
 			for (socket = 1; socket <= 5; socket += 1) {
 				var isTopChecker = (socket === count || (socket === 5 && count > 5)),
 					checker = $('#point' + pointName + ' > .socket-count-' + socket + ' > .checker');
-				
+
 				checker.css({
 					'background-image': (count >= socket) ? checker_img : 'none',
 					'animation-name': (movable && isTopChecker) ? 'blink' : 'none'
 				});
-				
+
 				if (movable && isTopChecker) {
 					checker.draggable({
 						disabled: false,
@@ -207,7 +207,7 @@ function drawBoard(json) {
 		drawPoint(blackBar, 'BB', movablePoints);
 		drawPoint(blackHome, 'BH', movablePoints);
 	}
-	
+
 	var actionUrl = json._links ? (json._links.action ? json._links.action.href : undefined) : undefined,
 		status = json.status.toLowerCase(),
 		canRoll = actionUrl && (status === 'initial' || status === 'rolling'),
@@ -216,16 +216,16 @@ function drawBoard(json) {
 		canReject = actionUrl && (status === 'doublestake'),
 		canEndTurn = actionUrl && (status === 'nomoves'),
 		isEndOfGame = status === 'end' || status === 'resigned';
-	
+
 	showDice(json.dice);
 	showCheckers(actionUrl, json.points, json.whiteBar, json.whiteHome, json.blackBar, json.blackHome, json.availableMoves);
-	
+
 	enableButton(canRoll, 'roll-button', function () { roll(actionUrl); });
 	enableButton(canDouble, 'double-button', function () { doubleStake(actionUrl); });
 	enableButton(canAccept, 'accept-button', function () { acceptStake(actionUrl); });
 	enableButton(canReject, 'reject-button', function () { rejectStake(actionUrl); });
 	enableButton(canEndTurn, 'end-turn-button', function () { endTurn(actionUrl); });
-	
+
 	$('#game-over-message').css('display', isEndOfGame ? 'inline-block' : 'none');
 	$('#board').css('display', 'inline-block');
 }
@@ -338,7 +338,7 @@ function transferChecker(source, destination, img) {
 			dx = (endPos.left - pos.left) * 0.01,
 			dy = (endPos.top - pos.top) * 0.01,
 			id;
-		
+
 		freeChecker.css('display', 'inline-block');
 		freeChecker.css('background-image', img);
 		freeChecker.css('top', pos.top);
@@ -372,7 +372,7 @@ function doMove(s, d, isHit, dice, currentPlayer) {
 		sourceCheckerCount = Number(sourceNumber.text()),
 		destinationNumber = getNumber(d),
 		destinationCount = Number(destinationNumber.text());
-	
+
 	if (sourceCheckerCount > 5) {
 		if (sourceCheckerCount === 6) {
 			sourceNumber.text('');
@@ -382,7 +382,7 @@ function doMove(s, d, isHit, dice, currentPlayer) {
 	} else {
 		source.css('background-image', 'none');
 	}
-	
+
 	if (destination.css('background-image') !== 'none') {
 		if (destinationCount >= 5) {
 			destinationCount = destinationCount + 1;
@@ -390,7 +390,7 @@ function doMove(s, d, isHit, dice, currentPlayer) {
 			destinationCount = 5;
 		}
 	}
-	
+
 	if (isHit) {
 		return transferChecker(source, destination, img).then(function () {
 			if (destinationCount > 5) {
@@ -471,7 +471,7 @@ function connect(host) {
 			}
 		});
 	});
-	
+
 	//stompClient.send('app/requestGame', player);
 	//stompClient.disconnect();
 }
