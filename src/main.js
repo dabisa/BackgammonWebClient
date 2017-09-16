@@ -26,11 +26,13 @@ import imageBlackChecker from './img/black_checker.png';
 
 var USERNAME = 'Dabisa';
 var PASSWORD = 'password';
-var host = 'boiling-brushlands-34264.herokuapp.com';
+var host = 'evening-ravine-20207.herokuapp.com';
 var stompClient;
 
 var dieImages = [imageDie1, imageDie2, imageDie3, imageDie4, imageDie5, imageDie6];
 var usedDieImages = [imageUsedDie1, imageUsedDie2, imageUsedDie3, imageUsedDie4, imageUsedDie5, imageUsedDie6];
+
+var actions = [];
 
 function basicAuthorization(username, password) {
 	return 'Basic ' + btoa(username + ':' + password);
@@ -407,8 +409,6 @@ function doMove(s, d, isHit, dice, currentPlayer) {
 		});
 	}
 }
-
-var actions = [];
 
 function addAction(action) {
 	actions.push(action);
